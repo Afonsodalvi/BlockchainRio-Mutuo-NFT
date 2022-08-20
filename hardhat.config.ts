@@ -65,7 +65,7 @@ function getChainConfig(chain: keyof typeof chainIds): NetworkUserConfig {
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.15",
+    version: "0.8.9",
     settings: {
       optimizer: {
         enabled: true,
@@ -95,7 +95,7 @@ const config: HardhatUserConfig = {
     coinmarketcap: process.env.COINMARKETCAP_API_KEY,
     showTimeSpent: true,
     showMethodSig: true,
-    token: "ETH",
+    token: "MATIC",//ETH
     currency: "USD",
     excludeContracts: [],
     src: "./contracts",

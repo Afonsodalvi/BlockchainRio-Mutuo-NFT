@@ -68,6 +68,7 @@
     "prepublishOnly": "pinst --disable",
     "deploy:truffle": "yarn hardhat run scripts/deploy.ts --network truffle",
     "deploy:NFT": "yarn hardhat run scripts/deployNFT.ts --network truffle",
+    "deploy:Mutuo": "yarn hardhat run scripts/deployMutuo.ts --network truffle",
     "prettier": "prettier --config ./.prettierrc.yml --write \"**/*.{js,json,md,sol,ts,yaml,yml,test.ts}\"",
     "prettier:check": "prettier --check --config ./.prettierrc.yml \"**/*.{js,json,md,sol,ts,yaml,yml}\"",
     "compile:watch": "nodemon --watch contracts/NFT.sol --exec \"yarn hardhat compile\"",

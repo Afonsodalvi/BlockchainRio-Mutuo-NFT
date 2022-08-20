@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity >=0.8.15;
+pragma solidity ^0.8.9;
 
 import "./solmate/ERC721.sol";
 import {Strings} from "./openzeppelin/Strings.sol";
@@ -12,6 +12,9 @@ error NonExistentTokenURI();
 error WithdrawTransfer();
 error ContractPaused();
 
+// https://github.com/OmnesBlockchainDev 
+//project developed for the BlockchainRio event
+//https://www.linkedin.com/company/omnes-blockchain-tech/
 contract NFT is ERC721, Ownable {
 
     using Strings for uint256;
@@ -21,7 +24,7 @@ contract NFT is ERC721, Ownable {
     string public hiddenMetadataUri;
     uint256 public currentTokenId;
     uint256 public constant TOTAL_SUPPLY = 20;
-    uint256 public constant MINT_PRICE = 8 ether;
+    uint256 public constant MINT_PRICE = 5 ether;
     bool public revealed = false;
     bool public paused = true;
 

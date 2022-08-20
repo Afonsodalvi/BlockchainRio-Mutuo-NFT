@@ -31,7 +31,7 @@ describe("NFT", () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let res: any;
   
-    let NFT: Contract;
+    let MUTUO: Contract;
   
     // value funded to signers by default
     const ethAmount: BigNumber = ethers.utils.parseEther("10000");
@@ -39,29 +39,20 @@ describe("NFT", () => {
     // const formatRes = Number.parseFloat(newRes).toFixed(2).toString();
   
     beforeEach(async () => {
-      const nft = await ethers.getContractFactory("NFT");
+      const mutuo = await ethers.getContractFactory("InvestStartup");
   
       //before(async () => {
       [owner, whitelistedUser, signerUser, holder, externalUser] = await (ethers as any).getSigners();
       //});
-  
-      const Baseuri = "https://ipfs.io/ipfs/CID.json";
-      const nome = "Afonso";
-      const symbol ="henrique";
-      const hiddenMetadadaUri = "ola"
+      MUTUO = await mutuo.deploy();
 
-      
-  
-      NFT = await nft.deploy(
-        nome, symbol, Baseuri,hiddenMetadadaUri);
-
-      await NFT.deployed();
+      await MUTUO.deployed();
 
       });
       // sanity checks
   describe("Init", async () => {
     it("should initialize", async () => {
-      expect(NFT).to.be.ok;
+      expect(MUTUO).to.be.ok;
     });
 
     it("accounts have been funded", async () => {
@@ -81,26 +72,26 @@ describe("NFT", () => {
     describe("Mint", async () => {
       it("Check initial mint cost Airdrop", async () => {
         
-        await NFT.connect(owner).mintAirdrp(holder.address);
-        //verify balanceOF
-        expect(await NFT.balanceOf(holder.address)).to.equal(1);
+        // await MUTUO.connect(owner).mintAirdrp(holder.address);
+        // //verify balanceOF
+        // expect(await MUTUO.balanceOf(holder.address)).to.equal(1);
         
       });
 
       it("Mint payable and Paused", async () => {
 
-        await NFT.connect(owner).setPaused(false);
+        // await MUTUO.connect(owner).setPaused(false);
 
-        await NFT.connect(owner).mintOmnes({
-          value: ethers.utils.parseEther("5"),});
+        // await MUTUO.connect(owner).mintOmnes({
+        //   value: ethers.utils.parseEther("8"),});
 
-          const balancebefore = await ethers.provider.getBalance(holder.address);
-          console.log(balancebefore);
+        //   const balancebefore = await ethers.provider.getBalance(holder.address);
+        //   console.log(balancebefore);
 
-          await NFT.connect(owner).withdrawPayments(holder.address);
+        //   await MUTUO.connect(owner).withdrawPayments(holder.address);
 
-          const balanceAfter = await ethers.provider.getBalance(holder.address);
-          console.log(balanceAfter);
+        //   const balanceAfter = await ethers.provider.getBalance(holder.address);
+        //   console.log(balanceAfter);
 
       });
 

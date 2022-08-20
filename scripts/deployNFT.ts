@@ -3,8 +3,8 @@ import { ethers } from "hardhat";
 async function main() {
   
   const Baseuri = "https://ipfs.io/ipfs/QmSxLQ6K7s3yvUWP4VpkBvhfyG1rJBcDY5gAKaScihAKxx/";
-  const nome = "SBT-OMNES10";
-  const symbol ="OMENSSBT";
+  const nome = "OMNES-Web3Club-SoulBound";
+  const symbol ="OMNES-WEB3-SBT";
   const hiddenMetadadaUri = "https://ipfs.io/ipfs/QmWCbaw4vp4m6QKqrkxtQe7A7tsir9WGMgVvZaagMzSe9W"
 
 
